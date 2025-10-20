@@ -857,3 +857,142 @@ In a cloud computing environment, the **customer is responsible** for the securi
 * **Risk:** Therefore, if you do not apply device hardening techniques and best practices to that virtual server, there is a **very high risk** that a threat actor (such as a hacker) could compromise your virtual server over the internet.
 
 ---
+
+# ☁️ **Cloud Deployment Models**
+
+When a cloud computing solution is deployed for an organization, cloud engineers and service providers typically use four (4) models.
+
+---
+
+### 1. Private Cloud 🏢
+
+The private cloud model is one where an organization (such as your company) **owns its own data center**, and that infrastructure is managed by your own IT team.
+
+Within the private cloud model, access to resources is restricted **only to that organization's employees** and no one else.
+
+<div align="center">
+  <img src="./images/11.png" width="600"/>
+</div>
+
+The diagram below (Figure 7.13) illustrates a private cloud model that can only be accessed by the organization and its employees:
+
+**Figure 7.13 – Private cloud model**
+
+---
+
+### 2. Public Cloud 🌐
+
+The public cloud model is available to **anyone** on the internet. These include public cloud service providers such as:
+
+* Microsoft Azure
+* Amazon Web Services (AWS)
+* Google Cloud Platform (GCP) and many others.
+
+The public cloud allows everyone to create virtual servers and deploy applications and services on a data center that **shares its resources** with others and uses a **pay-as-you-go** model.
+
+In the public cloud model, the cloud service provider is responsible for the maintenance of all physical hardware.
+
+<div align="center">
+  <img src="./images/12.png" width="400"/>
+</div>
+
+The diagram below (Figure 7.14) shows the public cloud and your organization, which is sharing resources with others:
+
+**Figure 7.14 – Public cloud model**
+
+---
+
+### 3. Hybrid Cloud 🔄
+
+The hybrid cloud model is a **mixture (hybrid)** of the private and public cloud deployment models.
+
+It allows an organization to have its data, servers, and applications backed up locally in its own private data center and simultaneously **replicated** (copied) to an online public cloud solution provider.
+
+This solution is quite **costly** to maintain, but it provides an **excellent solution for disaster recovery** and **business continuity**.
+
+<div align="center">
+  <img src="./images/13.png" width="600"/>
+</div>
+
+The diagram below (Figure 7.15) shows a hybrid cloud deployment model:
+
+**Figure 7.15 – Hybrid cloud model**
+
+---
+
+### 4. Community Cloud 🤝
+
+Finally, the community cloud model is one where **several organizations share resources** on a single cloud platform.
+
+These can be groups of companies that have shared interests or partnerships, all accessing and sharing resources within the same data center or from the same cloud service provider.
+
+---
+
+## 📦 Cloud Service Models
+
+Different cloud service models define how services, applications, and resources are **delivered** from the cloud service provider's data center to the users.
+
+### 1. SaaS (Software-as-a-Service) 📧
+
+SaaS is a very common service model. It allows the cloud solution provider to grant the user access **only to the application's user interface (UI)**, which is being hosted in the provider's data center.
+
+* **Instance**: Organizations using Google Workspace or Microsoft 365 do not need to install a client application on each user's computer. Every user can easily access their corporate email and other collaboration tools' web application using a standard web browser.
+* **User Concern**: The user neither worries about nor has access to manage the host operating system (OS) or the hardware components of the servers that are hosting the application.
+
+### 2. PaaS (Platform-as-a-Service) 💻
+
+The PaaS service model is specifically designed for **developers** who require a bit more control over their operating or working environments.
+
+* **Control**: When working with a PaaS solution, the cloud service provider allows the user or developer to make **changes to the operating system (OS)** and the programming frameworks (running on the OS).
+* **Limitation**: However, the user does not have access to the server's **underlying hardware resources**.
+
+### 3. IaaS (Infrastructure-as-a-Service) 🛠️
+
+The IaaS service model allows the user to **manage the physical hardware and software resources** on a virtual server in the cloud provider's data center.
+
+This model permits the user to **increase (scale up) or decrease (scale down)** computing resources on the servers, such as:
+
+* Number of processes (vCPUs)
+* Memory (RAM)
+* Storage (Hard drive)
+* Networking interface
+* Operating system (OS)
+
+### 4. DaaS (Desktop-as-a-Service) 🖥️
+
+DaaS is where a cloud service provider can deliver a **virtual desktop environment** (a full desktop) to a user over the internet.
+
+* **Provider's Responsibility**: The cloud service provider is responsible for managing all **backend maintenance**, such as hardware and software requirements. This includes backups, storage, and updates.
+* **Shared Responsibility**: However, the security management of DaaS solutions can be a **shared responsibility** between the cloud service provider and the user.
+* **Types of DaaS**:
+    * **Persistent Desktop**: This **keeps** the user's data and any changes made. Therefore, the next time the user logs into the virtual desktop, everything is already there.
+    * **Non-persistent Desktop**: In this, every time the user logs off from the virtual desktop, all data and settings are **cleared** from the system. Therefore, the next time the user logs on, they are presented with a completely clean virtual desktop environment.
+
+### 5. IaC (Infrastructure as Code) 📜
+
+Finally, the IaC model focuses on managing resources in the cloud service provider's data center (like servers, load balancers, and networking) **through code and scripts**, using the same versioning methods employed by DevOps engineers.
+
+---
+
+## 🔗 Cloud Connectivity Solutions
+
+Hosting applications, servers, and other resources on a cloud service provider's data center is excellent, but ensuring your organization and users have **secure access** is critically important.
+
+If you do not have secure access to the resources on your data center or the cloud provider's data center, it poses a **major security risk**. This is because a threat actor (like a hacker) could **intercept** the communication channel between your users and the resources on the cloud, obtaining sensitive and confidential information.
+
+### 1. VPN (Virtual Private Network) 🔒
+
+A VPN allows for establishing a **secure, encrypted connection** over an unsecure network (such as the internet).
+
+Setting up a VPN between your organization's network and the resources on the cloud service provider's data center is a **common solution** used by many organizations.
+
+* **Benefit**: Using a VPN allows a company to save a significant amount of money and also secures **data-in-motion** (data that is traveling) over the internet.
+* **Responsibility**: However, the company will be responsible for **managing its own VPN solutions** and ensuring that users can access resources when needed.
+
+### 2. Private-Direct Connection 🔌
+
+Another method to connect to the cloud service provider's data center is by using a **private-direct connection** to the cloud provider.
+
+Many ISPs (Internet Service Providers) offer **direct connectivity solutions** between an organization (the customer) and a data center. These connectivity solutions are typically **secure within the ISP network** to ensure that no unauthorized party can intercept the communication channel between the customer and the data center.
+
+---
