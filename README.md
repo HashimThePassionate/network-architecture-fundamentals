@@ -720,3 +720,140 @@ Unlike FCoE, iSCSI provides fiber communication over a **routable network** (mea
 * **Comparison**: iSCSI is **routable**, whereas FCoE only grants access to users who are on the same network (LAN).
 
 ---
+
+# ☁️ **Fundamental Principles of Cloud Computing**
+
+Cloud Computing is currently one of the most in-demand and trending topics within the IT industry. This is primarily because an increasing number of organizations are migrating their services, applications, and servers to the cloud.
+
+In the journey to become a network professional, it is essential to have a strong understanding of cloud computing, its various deployment models, and the services it offers.
+
+## What is Cloud Computing?
+
+In simple terms, cloud computing can be defined as the practice of paying to use resources located in a cloud service provider's data center, such as those operated by **Amazon** or **Microsoft**.
+
+---
+
+### The Traditional Method
+
+Imagine your organization needs additional servers to host new applications and services for daily employee tasks. The concerns associated with acquiring new servers include:
+
+* **Time (Shipping):** The duration it takes for the vendor to deliver the servers to the customer's location.
+* **Time (Setup):** The duration it takes for IT staff to set up those servers and deploy applications on them.
+* **Maintenance:** Separate maintenance is required for any future issues that arise with the equipment.
+
+### The Cloud Solution
+
+What if your organization could pay for resources *only as you use them*—resources that reside in someone else's data center, such as **Microsoft Azure**, **Amazon Web Services (AWS)**, or **Google Cloud Platform (GCP)**?
+
+In simple terms:
+
+1.  Your organization creates a user account on the cloud service provider's website.
+2.  It selects the services as needed.
+3.  It estimates the cost of hosting those services using an online calculator.
+4.  And then, it deploys servers and services **in minutes** instead of weeks.
+
+That is correct—instead of waiting weeks to receive physical servers from a vendor, cloud computing allows professionals to deploy new servers and applications over the internet in just a few minutes.
+
+Furthermore, if an individual no longer wishes to use a service, application, or server in the cloud provider's data center, you can **terminate** it within seconds and immediately stop paying for it.
+
+---
+
+## 💸 Pay-As-You-Go Model
+
+Cloud computing providers allow their customers to use a **"pay-as-you-go"** model. This means you can pay per minute or per hour, depending on the provider.
+
+* **Benefit:** This helps organizations save a significant amount of money and time, as they can start and stop servers according to their needs.
+* **Most Important Benefit:** The customer is **not responsible** for handling the physical maintenance of the servers located in the cloud service provider's data center. This responsibility is lifted from your IT staff.
+* **Customer's Responsibility:** However, the customer **is responsible** for the security management of all services, applications, and servers that are deployed in the cloud provider's data center.
+
+For this reason, cloud engineers must have a strong understanding of security concepts and best practices to secure data and assets in the cloud.
+
+---
+
+## What Does the Word "Cloud" Mean? ☁️
+
+The word "cloud" simply means that the customer is using a service, application, or server that resides in a data center that the customer can neither see nor physically access.
+
+For example, anyone on the internet with a credit card can create a user account on Microsoft Azure, AWS, or GCP and deploy a server within minutes. But do you, as the customer, see the physical server in that data center?
+
+In simple terms, in most cases, you do not see the actual servers, but you can communicate with that server using the internet. (The internet itself is a collection of public networks managed by many different ISPs around the world).
+
+---
+
+## 🚀 Advantages of Cloud Computing
+
+There are many advantages to using cloud computing technologies, such as the resources in the cloud provider's data center being **accessible from anywhere at any time**.
+
+### Example: Email Services
+
+Services like **Google Workspace** and **Microsoft 365** allow companies to outsource their email services to the cloud solutions provided by Google and Microsoft.
+
+* **Benefit:** By using Google Workspace and Microsoft 365, a company eliminates the need to set up mail exchange servers within its own network.
+* **Model:** Utilizing these email solutions, a company pays only **per user per month**. If a user requires additional storage for their mailbox, the company pays just an additional fee for that specific user.
+* **Result:** Overall, all users can access their mailbox (email inbox) from anywhere at any time using an internet connection, because these services are hosted and maintained by the email solution provider (Google/Microsoft).
+
+---
+
+## Reducing and Scaling Resources
+
+Cloud computing helps companies reduce the need for physical appliances, equipment, and devices at their own location. In simple terms, this reduces the physical space required to house servers.
+
+Cloud providers allow their customers to quickly **"spin up"** (create) a new virtual server in the cloud within minutes. Concurrently, they also permit the customer to **scale up** (increase) or **scale down** (decrease) computing resources on the server.
+
+* **Scaling Up (Increasing):** As a virtual server on the cloud requires more computing power, the customer is provided with features to increase computing resources. For example:
+    * Increasing the number of virtual processors (vCPUs).
+    * Increasing memory, i.e., virtual RAM.
+    * Increasing storage drives.
+    * Increasing Network Interface Cards (NICs).
+* **Scaling Down (Decreasing):** This is the opposite of "scaling up." When demand is low, the computing resources on the server are reduced.
+
+---
+
+## Impact on IT Jobs
+
+Organizations that utilize cloud computing technologies reduce the need for a dedicated IT team (which traditionally managed hardware).
+
+However, despite this, there is a **huge demand** for cloud engineers who possess the specialized skills to deploy, maintain, and secure solutions on Microsoft Azure, AWS, and GCP.
+
+These three (3) top cloud providers have created their own learning paths and certification tracks to help the new generation of IT professionals learn cloud computing.
+
+---
+
+## 💡 Important Note
+
+* **Tenant:** A single customer on a cloud provider's platform (a single 'renter').
+* **Multi-tenant:** When multiple customers use the same cloud provider's platform (shared resources).
+* **Tenant Isolation:** This is used in multi-tenancy. It allows many customers to use the same shared resources within the data center, but each customer remains **isolated** from other customers' resources (no one can see another's data).
+
+---
+
+## ⚖️ Elasticity and Scalability
+
+Cloud computing providers support both **elasticity** and **scalability**.
+
+### 1. Elasticity
+
+Elasticity simply means that a system **adapts** itself according to changes in workload and environment.
+
+This allows the customer to quickly **provision** (create) and **de-provision** (terminate) servers and applications in the cloud provider's data center as needed.
+
+* **Example:** Assume your organization needs one (1) web application to host a website. As more users connect to your web server, the demand for computing power to process each web request will increase.
+* **Role of Elasticity:** With elasticity, your organization can create **additional** web servers in minutes for that same web application and implement a **load balancer** to distribute the incoming web requests among every web server.
+
+### 2. Scalability
+
+Scalability in cloud computing allows organizations to **increase** or **decrease** necessary resources based on demand.
+
+* **Example:** You might need one (1) Linux server in the cloud to perform certain tasks. As you increase the workload on the server, you will eventually notice that each task is taking longer to complete.
+* **Role of Scalability:** By increasing this server's virtual number of processes (vCPUs) and memory (RAM) (i.e., **"Scaling Up"** the server), more tasks can be run at the same time, and it will be ensured that each process receives adequate computing resources.
+
+---
+
+## 🔒 Security: A Shared Concern
+
+In a cloud computing environment, the **customer is responsible** for the security of the resources that they place in the cloud service provider's data center.
+
+* **Example:** If you "spin up" a new virtual server that is running Windows Server 2022 or a Linux-based server, **you are responsible** for securing your virtual machine on the cloud.
+* **Risk:** Therefore, if you do not apply device hardening techniques and best practices to that virtual server, there is a **very high risk** that a threat actor (such as a hacker) could compromise your virtual server over the internet.
+
+---
