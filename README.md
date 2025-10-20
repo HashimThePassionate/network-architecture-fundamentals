@@ -469,3 +469,149 @@ It allows network professionals to:
 * Continuously monitor their network for performance issues.
 
 ---
+
+# 🏛️ **Data Center Architectures**
+
+A data center is a dedicated building or a group of buildings that houses a very large collection of servers, networking devices, and security appliances, which are maintained by an organization.
+
+Medium and large organizations build data centers to allow IT professionals to keep all their servers and necessary applications within a dedicated space on their network. This concept provides two things:
+
+1.  **Centralized Management**: Everything is managed from one location.
+2.  **Dedicated Facility**: A place with proper environmental controls, such as:
+    * **HVAC Systems**: Heating, Ventilation, and Air Conditioning (to keep the environment cool and suitable).
+    * **Multiple Internet Connections**: From various Internet Service Providers (ISPs) (so if one goes down, the other remains active).
+    * **Redundant Power Supplies**: Additional power arrangements (UPS, generators) to ensure the organization's critical resources are always available.
+
+---
+
+## 💰 Cost and Service Providers
+
+While owning a data center is a splendid idea, building and maintaining one is very costly.
+
+The alternative to this is that there are service providers (companies) that are building and maintaining data centers so that customers (other companies) can simply rent or lease the resources within those data centers.
+
+For example, if your organization needs a few servers to host its essential applications and resources, but you do not have the physical space to store the servers, you can easily have your servers placed in a service provider's data center.
+
+Now, we will look at the difference between branch and on-premises solutions.
+
+---
+
+## 🏢 Branch Office vs. On-Premises
+
+Why does an organization need a data center? Organizations use servers to host their mission-critical applications (apps without which work cannot proceed), provide services, and store large amounts of data.
+
+As productivity increases and new applications are needed, the IT team installs additional servers to ensure all users can easily access resources when needed.
+
+### Instance:
+
+If an organization has one (1) file server that provides centralized storage to hundreds of users on the network, that server will become overwhelmed as more users try to transfer files between their computers and that file server. In simple terms, the server has to handle every user's request at the same time, which uses a lot of computing power.
+
+Furthermore, if that server becomes unavailable on the network, users will not be able to access the files stored on it.
+
+### The Redundancy Solution
+
+One solution is to install redundant servers within the organization, so that more than one server is available to provide the same service. This provides **fault tolerance** and **resource redundancy**.
+
+However, as the number of servers in an organization grows, the IT team must ensure that all their assets (like servers) are always available to users on the network. This means system administrators and IT technicians must perform routine maintenance procedures to ensure everything is working correctly, and they must also continuously monitor the health of every device on the network.
+
+### What is an On-Premises Solution?
+
+An on-premises solution simply means that an organization's own servers are present inside its own company building and are maintained by in-house IT professionals (the company's own employees).
+
+* **Advantage**: The benefit of this model is that IT professionals have physical access to the servers, and the organization maintains full ownership of those devices and equipment.
+* **Disadvantage**: If a component in one of the servers fails or it becomes unavailable, the in-house IT professionals are responsible for resolving those issues as quickly as possible and ensuring users' access to resources.
+
+### Branch Offices
+
+As an organization grows and builds more branch offices, the company's IT team must ensure that their users (such as employees) can access all network resources to perform their daily tasks effectively.
+
+* Companies typically contact their local telecommunication provider or ISP for a **Wide Area Network (WAN)** solution to interconnect their branch offices. This allows users in a remote branch office to access resources located in the main office.
+* **Alternative**: The company can also implement a **Virtual Private Network (VPN)** solution to connect its branch offices via the internet, which also eliminates the cost of paying an ISP for a managed service.
+
+### Using a Service Provider Data Center
+
+At times, an organization sees an advantage in using a service provider's data center to host its servers and applications, because data centers are designed for **uptime availability**, which ensures that resources are always available for users and customers.
+
+When hosting your servers and applications in a data center, it is important to consider these factors:
+
+* Connectivity methods between the data center and your location (how you will connect).
+* Security and data privacy concerns related to using the service provider's data center.
+* The expenses of paying the service provider versus an on-premises solution (setting up your own).
+
+### What is Colocation?
+
+Colocation is another type of solution that many organizations commonly use.
+
+* **Explanation**: A colocation solution is typically a type of data center that rents physical server rack spaces, internet bandwidth, servers, and other equipment to customers.
+* **Advantage**: Using colocation allows companies to bring their **own devices** to the data center location, where they will be hosted by the service provider.
+
+---
+
+## 🏛️ Spine and Leaf Architecture (Data Center Design)
+
+A data center uses a special 2-tier architecture called the **spine and leaf architecture**. This design is specifically created to support **scalability** (the ability to expand the network) and **East-West traffic flow** (data exchange between servers *within* the data center).
+
+The spine and leaf network architecture consists of two (2) layers of network switches that are specifically designed to operate in data center networks.
+
+<div align="center">
+  <img src="./images/07.png" width="600"/>
+</div>
+
+### Diagram: Figure 7.9 – Spine and leaf architecture
+
+* **Spine Layer (Top Layer)**: The top row of switches is called the **spine switches** or backbone switches. Their job is to create a "full mesh." This mesh is formed by connecting every spine switch to *all* switches in the layer below.
+* **Leaf Layer (Lower Layer)**: The switches in the lower layer are called the **leaf switches**.
+* **Connection Rule**: Every leaf switch is connected to *every* spine switch. This creates a full mesh for redundancy (additional paths).
+
+<div align="center">
+  <img src="./images/08.png" width="500"/>
+</div>
+
+### Diagram: Figure 7.10 – Top-of-Rack switching
+
+Leaf switches are also known as **Top-of-Rack (TOR)** switches.
+
+* **Reason**: Because they are typically placed at the very **top** of a server rack and allow servers to connect to the network.
+* **Function**: The diagram (Figure 7.10) shows that all physical servers within each physical server rack are connected to the TOR (leaf) switch of that *same* rack.
+
+As shown in the diagram above, every server within a single rack is connected to that rack's TOR switch.
+
+* **Intra-Rack Traffic (Inside the rack)**: Therefore, if a virtual machine (VM) on one server in Rack 1 wants to communicate with a virtual machine on another server *within* Rack 1, the TOR switch for Rack 1 will handle forwarding that traffic between the servers and virtual machines within Rack 1.
+
+---
+
+### 💡 Important Note
+
+* **North-South Traffic**: This is the traffic flow that occurs between a server and the *outside* of the data center (like the internet).
+* **East-West Traffic**: This is the traffic flow that occurs *between* servers and virtual machines *inside* the data center. (The Spine-Leaf design is excellent for this traffic).
+
+---
+
+<div align="center">
+  <img src="./images/09.png" width="500"/>
+</div>
+
+### Diagram: Figure 7.11 – Forwarding traffic between spine and leaf switches
+
+However, if a virtual machine on a physical server in Rack 1... wants to communicate with a virtual machine on a physical server in Rack 3 (**Inter-Rack Traffic**), then:
+
+1.  The TOR (leaf) switch for Rack 1 will forward that traffic to one of the **spine switches**.
+2.  That spine switch will then forward the message to the TOR (leaf) switch for **Rack 3**.
+3.  The TOR (leaf) switch for Rack 3 will be responsible for delivering that message to its destination virtual machine.
+
+The diagram (Figure 7.11) shows how traffic is forwarded between the spine and leaf switches.
+
+### Features of Spine-Leaf Architecture
+
+* **Layer 3 Switches**: In a spine and leaf architecture, every switch (whether spine or leaf) is a **Layer 3 switch** (meaning it can also perform routing).
+* **Routing Protocols**: This architecture uses dynamic routing protocols (like OSPF or BGP) to forward traffic between servers and devices.
+* **VXLAN Technology**: This architecture uses a technology called **Virtual Extensible LAN (VXLAN)**. This technology allows data centers to easily scale to meet the demands of providing cloud computing services to users.
+
+### Scalability (Ability to Expand)
+
+As more server racks are implemented in the data center, the spine and leaf architecture allows data center engineers to easily scale (expand) the network to support more devices.
+
+* **Adding Leafs**: Adding an additional leaf switch allows more servers to be included in the data center network.
+* **Adding Spines**: Furthermore, it is also very easy to add additional spine switches to support the growing number of leaf switches.
+
+---
