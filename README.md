@@ -284,3 +284,188 @@ A critical point to keep in mind is the high-availability connection strategy:
 * This dual-connection design is intentional. It provides **fault tolerance** and **redundancy**. If one of the Collapsed Core switches fails, all Access Layer switches still have an active path to the network through the second, operational Collapsed Core switch.
 
 ---
+
+# 🚀 Understanding Software-Defined Networking (SDN)
+
+Software-Defined Networking (SDN) is a technology that permits network professionals to automate the configuration and management of an entire organization's networking devices using a controller-based solution (a central software).
+
+---
+
+## 🛠️ The Traditional Method
+
+Traditionally, a network professional had to perform all of the following tasks manually:
+
+* Purchasing networking devices (routers, switches) from a vendor (like Cisco).
+* Unboxing each device.
+* Upgrading the Operating System (OS) and firmware.
+* Applying configurations by accessing each networking device separately.
+* Finally, verifying that the configurations are working exactly as intended.
+
+This method was considered completely normal because it has been the standard practice in the networking industry for years.
+
+### Downsides of the Traditional Method 👎
+
+The disadvantages of using this old method are:
+
+* **Repetitive Work**: Many tasks are repeated over and over.
+* **Time-Consuming**: This work requires a significant amount of time.
+* **Manual Configuration**: The network professional must configure every switch and router by hand.
+* **Human Errors**: Whenever a task is done manually, there is a possibility of human error. For example, accidentally misconfiguring features or services.
+
+Many seasoned network professionals avoid this problem by creating templates (pre-defined sets of configuration) that are specific to certain devices.
+
+However, even these templates can have issues, such as:
+
+* They might be outdated.
+* They might be applied to the wrong device models.
+
+---
+
+## 🤖 Automation: A Better Alternative
+
+A better alternative to the traditional method is to use programming techniques to automate the process of applying configurations to devices on a TCP/IP network.
+
+Network professionals can create scripts (small programs) using **Python** (a high-level programming language). These scripts gather information about networking devices from various sources (like Microsoft Excel workbooks or network monitoring applications).
+
+This information includes:
+
+* Hostnames
+* IP Addresses
+* Subnet Masks, etc.
+
+Additionally, a template engine for Python, such as **Jinja2**, is used. Jinja2 allows network professionals to create templates that automate the process of applying configurations to networking devices.
+
+### 💡 Tip (Advice)
+
+To learn more about Jinja, check these links:
+
+* [https://palletsprojects.com/p/jinja/](https://palletsprojects.com/p/jinja/)
+* [https://jinja.palletsprojects.com/](https://jinja.palletsprojects.com/)
+
+---
+
+## 🔌 Cisco Zero Touch Provisioning (ZTP)
+
+In a Cisco environment, **Zero Touch Provisioning (ZTP)** is a feature that gives network professionals the ability to configure a new networking device (like a new Cisco switch or router) in such a way that as soon as it is connected to the network, it **automatically** retrieves its configuration.
+
+This saves a lot of time and significantly reduces the risk of misconfiguration on new networking devices.
+
+## 🧠 Controller-Based Solutions: The Real Change
+
+While these methods (Python scripts and ZTP) are much better than manual configuration, they still involve a lot of manual work that you might not realize.
+
+The network engineering industry is now rapidly moving towards **controller-based solutions**. These solutions allow network professionals to manage the entire network from a single place (a **single pane of glass**, or one central dashboard).
+
+Therefore, network professionals no longer need to manually apply configurations to network devices.
+
+They simply state their **intent** (i.e., their objective) to the **SDN Controller**, and the controller itself applies all the necessary configurations across the network.
+
+This new method is called **Intent-Based Networking (IBN)**.
+
+---
+
+## 🏗️ Components and Architecture of SDN
+
+### 1. Traditional Network Architecture
+
+In a common or traditional network, each networking device (like a router or switch) decides on its own how to send data to its destination.
+
+In simple terms, every network device has its own "brain" that makes decisions for forwarding messages and has its own separate configurations.
+
+Since devices on a traditional network operate autonomously (independently) from each other, it is very important to understand the role of the three (3) "planes" present inside each device:
+
+* Management Plane
+* Data Plane
+* Control Plane
+
+### 2. The Three Planes of a Network
+
+In every traditional router or switch, these three planes work together:
+
+#### 🧠 Management Plane
+This plane allows network professionals to manage network devices. It uses various communication channels and protocols.
+
+* **Protocols**: This includes Secure Shell (SSH), HTTPS, and Simple Network Management Protocol (SNMP).
+* **Objective**: If a device did not have a management plane, it would be very difficult to manage or monitor it on the network. This is the path through which a human (admin) communicates with the device.
+
+#### 🚛 Data Plane (Data Forwarding Plane)
+The job of the data plane on a network device is to receive and forward messages between the source and the destination. This plane does the actual "hard work."
+
+* **In a Switch**: When a switch receives a message (frame), it checks the destination MAC address inside the frame header. The switch then looks in its CAM Table (or MAC address table) to determine how to forward this frame to its destination.
+* **In a Router**: A router checks the destination IP address inside the packet header and finds a suitable path in its local routing table to forward the packet to its destination.
+
+#### 🧭 Control Plane (Decision-Making Plane)
+The control plane on a network device controls how the entire device will operate.
+
+* **The Real Brain**: The control plane is the actual "brain" of the device and it tells the device how to make forwarding decisions on the network.
+* **Functions**:
+    * Routing protocols (like OSPF or BGP) help routers decide how to send a packet to its destination.
+    * Switches use Layer 2 forwarding algorithms (like Spanning Tree Protocol) to decide how to send a frame to the destination host.
+* **Summary**: All the algorithms and mechanisms that decide how the device will handle messages are present within the control plane.
+
+### 3. SDN Architecture (The New Method)
+
+In an SDN architecture, the traditional method is completely changed.
+
+* **Central Brain**: The **SDN controller** manages the role and function of the control plane for all networking devices.
+* **The Big Change**: In simple terms, the individual control plane (brain) is removed from each network device. Now, this "brain function" is centrally controlled and managed by the SDN Controller.
+
+<div align="center">
+  <img src="./images/06.png" width="500"/>
+</div>
+
+As shown in the diagram below (Figure 7.7):
+
+**Figure 7.7 – SDN architecture**
+
+In this diagram, the SDN Controller is at the very top (the central brain) and it is controlling all the switches and routers below it. Now, the devices do not have their own brains; they only perform the Data Plane's job based on the "instructions" from the Controller.
+
+### 4. Benefits of SDN ✅
+
+Using SDN in a large network provides many benefits to network professionals:
+
+* **Complete Visibility**: The network professional simply logs into the SDN controller, which provides them complete visibility (the ability to see everything) over their network (such as network health and device performance).
+* **Proactive Management**: The SDN controller can predict potential upcoming issues in the network and can also provide recommendations to resolve them.
+* **Central Management**: Network professionals can centrally manage all networking devices across their entire organization from one place, through a single dashboard interface.
+
+### 5. SDN APIs: How It Works? 🔌
+
+The SDN controller manages all networking devices using the **Southbound Interface (SBI) API**.
+
+#### Southbound Interface (SBI)
+This is the means by which the Controller talks "down" (south) to the network devices (switches/routers). The following methods are used for this:
+
+* NETCONF
+* OpenFlow
+* Command-line interface (CLI)
+* SNMP
+* OpFlex
+
+Additionally, the network professional accesses the SDN controller via the **Northbound Interface (NBI) API**.
+
+#### Northbound Interface (NBI)
+This is the means by which a human (admin) or another program accesses the Controller from "above" (north). This interface provides you the "single pane of glass" (a single dashboard) from which the entire network is visible.
+
+* **Access**: Practically, network professionals access the controller in two ways:
+    1.  **Graphical User Interface (GUI)**: A visual dashboard (like the image of Cisco DNA Center below).
+    2.  **Representational State Transfer (REST) API**: For retrieving information via automation scripts (like Python).
+
+### 6. Example: Cisco DNA Center
+
+The screenshot below shows the user interface (dashboard) of the **Cisco Digital Network Architecture (DNA) Center**.
+
+<div align="center">
+  <img src="./images/6.1.png" width="500"/>
+</div>
+
+**Figure 7.8 – Cisco DNA Center**
+
+Cisco DNA Center is, in fact, an SDN controller.
+
+It allows network professionals to:
+
+* Design the network and implement policies.
+* Perform device provisioning tasks (i.e., quickly set up new devices on the network).
+* Continuously monitor their network for performance issues.
+
+---
