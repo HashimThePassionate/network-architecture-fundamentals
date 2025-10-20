@@ -151,4 +151,90 @@ This way, even during heavy network congestion, essential data reaches its desti
 ---
 
 
-This means you do not have to invent a network design from scratch. Instead, you can use pre-existing models that have already been tested and are proven to deliver excellent performance. This approach makes the network design process easier, faster, and far more reliable.
+# 🚀 **Cisco's 3-Tier Network Architecture**
+
+Cisco's 3-Tier Architecture is a common and highly effective network design approach utilized by large organizations. In this design, the network is segmented into three distinct layers, with each layer performing a specific function. This design simplifies the network and makes it easier to manage.
+
+---
+
+## 🏛️ The Layers of the 3-Tier Architecture
+
+
+<div align="center">
+  <img src="./images/03.png" width="500" />
+</div>
+
+This architecture enhances scalability, fault tolerance, and security by separating the three layers.
+
+### 1. Access Layer (Edge Layer) 🔌
+
+* **Objective**: This layer connects end devices (such as computers and printers) to the network. It represents the "edge" of the network where users begin to access data.
+* **Function**: It primarily operates at **Layer 2** (of the OSI Model), meaning it forwards data frames based on MAC addresses.
+* **Redundancy**: Typically, end devices (like computers) have only one Network Interface Card (NIC). Therefore, their connectivity to the Access Layer switch usually does not include redundancy.
+
+### 2. Distribution Layer (Aggregation Layer) 🔗
+
+* **Objective**: This layer connects the Access Layer switches and provides redundancy for them. It aggregates the traffic received from the access layer and forwards it to the Core Layer.
+* **Function**: It possesses **Layer 3** (Routing) capabilities. **Layer 3 Switches** are used at this layer, which perform routing (sending traffic between different subnets) and filtering (using access lists).
+* **Redundancy**: Each Access Layer switch is connected to two different Distribution Layer switches. If one Distribution switch fails, the Access switch immediately redirects traffic to the other switch, thus maintaining fault tolerance.
+
+### 3. Core Layer (Backbone) 🧠
+
+* **Objective**: This is the backbone of the network. Its fundamental purpose is to transport data at high speeds.
+* **Function**: Core Layer switches focus solely on high-speed switching and routing. They do not perform any complex filtering or policy enforcement. They are designed using **Layer 3 Switches**.
+* **Traffic Flow**: All traffic coming from the Distribution Layer passes through the Core Layer to reach the Enterprise Network or other branches.
+
+---
+
+## 📌 Key Takeaway: Layer 3 Switches
+
+It is essential to remember that **Layer 3 switches** are used in the Distribution and Core Layers. These switches can perform both Layer 2 (switching) and Layer 3 (routing) functions. This makes it easy to segment the network into different subnets and rapidly route traffic between them.
+
+---
+
+## 🌟 3-Tier Architecture: A Deeper Look
+
+Cisco's 3-Tier Architecture provides a foundation that offers large organizations excellent scalability, fault tolerance, and redundancy. In this design, the network is divided into three separate layers, which is also known as a **modular design**.
+
+<div align="center">
+  <img src="./images/04.png" width="500" />
+</div>
+
+### Core Layer (Network Backbone) 🧠
+
+The Core Layer is the high-speed backbone of the network architecture.
+
+* **Objective**: Its primary role is to transport data at high speeds and provide interconnectivity and redundancy for the distribution layers.
+* **Function**: When traffic needs to be sent from one Branch Office to another (e.g., from Branch A to Branch B), that data passes through the Core Layer.
+* **Redundancy**: Every Distribution Layer switch is connected to every switch in the Core Layer. This ensures that if a single switch or link in the Core Layer fails, traffic can immediately travel via an alternative path.
+
+### Benefits of 3-Tier Architecture ✅
+
+This architecture is ideal for large organizations because:
+
+* **Modular Design**: The design is segmented into three layers. Each layer has its specific role, which maintains scalability (new devices can be added easily) and redundancy.
+* **Consistency**: This design supports modularity, which makes it easy to replicate design elements and implement them across the entire organization.
+* **Flat-Network Elimination**: It eliminates the old and weak flat-network design, which supports neither scalability nor redundancy.
+
+---
+
+## 🛒 Switch Selection (Cisco Products)
+
+Since the functions of each layer are different, selecting the appropriate switch model for each layer is crucial.
+
+* **Access Layer Switches (LAN Access)**: These switches are for connecting end devices.
+    * *Examples*: Catalyst 9200/9300 Series.
+* **Core and Distribution Layer Switches (LAN Core and Distribution)**: These are high-speed and high-redundancy switches.
+    * *Examples*: Catalyst 9500/9600 Series.
+
+**💡 Tip**: As a network professional, you should always visit the vendor's website (like Cisco) to read the datasheet. This helps you understand if a specific switch model (like the Nexus 9000 Series, which is for data centers) meets your network's requirements and feature needs.
+
+---
+
+## 🏢 2-Tier Architecture
+
+While the 3-Tier Architecture is recommended for large organizations, it can be quite expensive for smaller organizations. Therefore, the **2-Tier Architecture** was designed for smaller organizations.
+
+This design provides features similar to the 3-Tier Architecture (scalability, fault tolerance) but **combines the Distribution and Core Layers** to reduce costs.
+
+---
