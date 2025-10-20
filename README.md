@@ -1,4 +1,4 @@
-# 💎 Core Principles of Network Architecture
+# 💎 **Core Principles of Network Architecture**
 
 This guide provides a comprehensive overview of designing an optimal network architecture, a foundational requirement for any modern organization.
 
@@ -64,6 +64,10 @@ Network professionals achieve fault tolerance by implementing **redundancy**.
 * **What is Redundancy?** Redundancy simply means creating more than one path (multiple paths) for data packets to travel between a source and a destination.
 * **How it Works:** If one path fails (e.g., a router goes offline ❌), the network devices immediately detect this failure. They then automatically reroute the traffic through the remaining healthy paths (as shown by the green arrow ➡️) to ensure the data still reaches its destination.
 
+<div align="center">
+  <img src="./images/01.png" width="400" />
+</div>
+
 #### The Role of Packet Switching 📦
 
 Most modern networks use **packet switching** to send data.
@@ -95,6 +99,10 @@ A **daisy chain** is a method where devices are connected in a linear series: on
 2.  **Performance Issues:** When traffic needs to travel from one end of the chain to the other, it must pass through every single intermediate switch. This long journey significantly increases latency and creates a high risk of congestion.
 
 For these reasons, daisy-chaining switches is **not recommended** as it leads to long-term problems. A proper, scalable design, such as a **star topology** (where all switches connect to a central distribution switch), is preferred.
+
+<div align="center">
+  <img src="./images/02.png" width="500" />
+</div>
 
 ### 3. Security 🔒
 
