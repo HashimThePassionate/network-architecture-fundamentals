@@ -2,6 +2,73 @@
 
 This guide provides a comprehensive overview of designing an optimal network architecture, a foundational requirement for any modern organization.
 
+<details open>
+<summary><strong>📑 Table of Contents</strong></summary>
+
+### 🎯 Core Principles
+- [💡 The Importance of Network Architecture](#-the-importance-of-network-architecture)
+- [🚦 Common Network Performance Challenges](#-common-network-performance-challenges)
+  - [Congestion](#congestion)
+  - [High Latency 🐢](#high-latency-)
+  - [The Critical Relationship 🔗](#the-critical-relationship-)
+- [🛠️ The Four Pillars of Network Design](#️-the-four-pillars-of-network-design)
+  - [1. Fault Tolerance and Redundancy 🛡️](#1-fault-tolerance-and-redundancy-️)
+  - [2. Scalability 🚀](#2-scalability-)
+  - [3. Security 🔒](#3-security-)
+  - [4. Quality of Service (QoS) 🎯](#4-quality-of-service-qos-)
+
+### 🏗️ Network Architectures
+- [🚀 Cisco's 3-Tier Network Architecture](#-ciscos-3-tier-network-architecture)
+  - [🏛️ The Layers of the 3-Tier Architecture](#️-the-layers-of-the-3-tier-architecture)
+  - [📌 Key Takeaway: Layer 3 Switches](#-key-takeaway-layer-3-switches)
+  - [🌟 3-Tier Architecture: A Deeper Look](#-3-tier-architecture-a-deeper-look)
+  - [🛒 Switch Selection (Cisco Products)](#-switch-selection-cisco-products)
+- [🚀 Cisco 2-Tier Architecture](#-cisco-2-tier-architecture)
+  - [📊 Analyzing the 2-Tier Diagram](#-analyzing-the-2-tier-diagram)
+  - [🛡️ Key Design Feature: Fault Tolerance](#️-key-design-feature-fault-tolerance)
+
+### 🤖 Modern Networking Technologies
+- [🚀 Understanding Software-Defined Networking (SDN)](#-understanding-software-defined-networking-sdn)
+  - [🛠️ The Traditional Method](#️-the-traditional-method)
+  - [🤖 Automation: A Better Alternative](#-automation-a-better-alternative)
+  - [🔌 Cisco Zero Touch Provisioning (ZTP)](#-cisco-zero-touch-provisioning-ztp)
+  - [🧠 Controller-Based Solutions: The Real Change](#-controller-based-solutions-the-real-change)
+  - [🏗️ Components and Architecture of SDN](#️-components-and-architecture-of-sdn)
+
+### 🏢 Data Center Design
+- [🏛️ Data Center Architectures](#️-data-center-architectures)
+  - [💰 Cost and Service Providers](#-cost-and-service-providers)
+  - [🏢 Branch Office vs. On-Premises](#-branch-office-vs-on-premises)
+  - [🏛️ Spine and Leaf Architecture](#️-spine-and-leaf-architecture-data-center-design)
+- [📦 Storage Area Networks (SANs)](#-storage-area-networks-sans)
+  - [⛔ The Problem of Lacking Centralized Storage](#-the-problem-of-lacking-centralized-storage)
+  - [1️⃣ Solution 1: Network Attached Storage (NAS)](#1️⃣-solution-1-network-attached-storage-nas)
+  - [2️⃣ Solution 2: Storage Area Network (SAN)](#2️⃣-solution-2-storage-area-network-san)
+  - [⚡ High-Speed Connection Types in SANs](#-high-speed-connection-types-in-storage-area-networks-sans)
+
+### ☁️ Cloud Computing
+- [☁️ Fundamental Principles of Cloud Computing](#️-fundamental-principles-of-cloud-computing)
+  - [💸 Pay-As-You-Go Model](#-pay-as-you-go-model)
+  - [🚀 Advantages of Cloud Computing](#-advantages-of-cloud-computing)
+  - [⚖️ Elasticity and Scalability](#️-elasticity-and-scalability)
+  - [🔒 Security: A Shared Concern](#-security-a-shared-concern)
+- [☁️ Cloud Deployment Models](#️-cloud-deployment-models)
+  - [1. Private Cloud 🏢](#1-private-cloud-)
+  - [2. Public Cloud 🌐](#2-public-cloud-)
+  - [3. Hybrid Cloud 🔄](#3-hybrid-cloud-)
+  - [4. Community Cloud 🤝](#4-community-cloud-)
+- [📦 Cloud Service Models](#-cloud-service-models)
+  - [1. SaaS (Software-as-a-Service) 📧](#1-saas-software-as-a-service-)
+  - [2. PaaS (Platform-as-a-Service) 💻](#2-paas-platform-as-a-service-)
+  - [3. IaaS (Infrastructure-as-a-Service) 🛠️](#3-iaas-infrastructure-as-a-service-️)
+  - [4. DaaS (Desktop-as-a-Service) 🖥️](#4-daas-desktop-as-a-service-️)
+  - [5. IaC (Infrastructure as Code) 📜](#5-iac-infrastructure-as-code-)
+- [🔗 Cloud Connectivity Solutions](#-cloud-connectivity-solutions)
+  - [1. VPN (Virtual Private Network) 🔒](#1-vpn-virtual-private-network-)
+  - [2. Private-Direct Connection 🔌](#2-private-direct-connection-)
+
+</details>
+
 ---
 
 ## 💡 The Importance of Network Architecture
