@@ -238,3 +238,49 @@ While the 3-Tier Architecture is recommended for large organizations, it can be 
 This design provides features similar to the 3-Tier Architecture (scalability, fault tolerance) but **combines the Distribution and Core Layers** to reduce costs.
 
 ---
+
+# 🚀 **Cisco 2-Tier Architecture**
+
+The 2-Tier architecture is a network design tailored for **smaller organizations** that operate with a smaller network and budget.
+
+This architecture consists of two layers instead of the traditional three. The 2-tier model provides the same essential benefits as the 3-tier model, including support for:
+
+* Scalability
+* Fault Tolerance and Redundancy
+* Security
+* QoS (Quality of Service)
+
+...all within a more compact and cost-effective design.
+
+---
+
+<div align="center">
+  <img src="./images/05.png" width="500"/>
+</div>
+
+
+## 📊 Analyzing the 2-Tier Diagram (Figure 7.6)
+
+The provided diagram clearly illustrates the 2-tier architecture, which is composed of a **Collapsed Core Layer** and an **Access Layer**.
+
+### 1. The Collapsed Core Layer 🧠
+
+* **Definition**: This layer is a **consolidation** of the **Core** and **Distribution** layers (from the 3-tier model) into a single, combined layer.
+* **Implementation**: Network professionals can typically implement either Core or Distribution layer switches within this collapsed layer to handle the combined responsibilities.
+* **Function**: As shown in the diagram, this layer connects to the wider "Enterprise Network" (like the internet or a WAN) and also aggregates all connections from the Access Layer. The two switches in this layer are also interconnected, providing a redundant link between them.
+
+### 2. The Access Layer 💻
+
+* **Function**: This layer remains the same as in the 3-tier model. Its functionality is to provide network connectivity for **end devices** (like computers, printers, and phones) to the actual network.
+* **In the Diagram**: You can see the end-user computers connecting directly to their respective Access Layer switches.
+
+---
+
+## 🛡️ Key Design Feature: Fault Tolerance
+
+A critical point to keep in mind is the high-availability connection strategy:
+
+* As shown in the diagram, **each Access Layer switch is connected to *each* switch within the Collapsed Core layer.**
+* This dual-connection design is intentional. It provides **fault tolerance** and **redundancy**. If one of the Collapsed Core switches fails, all Access Layer switches still have an active path to the network through the second, operational Collapsed Core switch.
+
+---
