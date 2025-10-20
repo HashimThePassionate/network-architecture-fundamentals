@@ -615,3 +615,108 @@ As more server racks are implemented in the data center, the spine and leaf arch
 * **Adding Spines**: Furthermore, it is also very easy to add additional spine switches to support the growing number of leaf switches.
 
 ---
+
+# 📦 **Storage Area Networks** (SANs)
+
+Data is the most valuable asset for any organization and must be safeguarded at all times from threat actors, such as hackers.
+
+While cybersecurity professionals continuously work to ensure their organization's assets are secure, it is also crucial to consider that data-storing devices can experience **hardware failures**. These failures can occur in:
+
+* Hard Disk Drives (HDDs)
+* Solid State Drives (SSDs)
+* Drives within computers, servers, or Network Attached Storage (NAS) devices.
+
+---
+
+## ⛔ The Problem of Lacking Centralized Storage
+
+Imagine an organization that has no centralized file server on its network. In this scenario, everyone stores their essential files on their **local computers**.
+
+Whenever a user needs to share a document with another person, they send it as an email attachment. If a user's computer becomes infected with malware or experiences a hardware failure, there is a significant risk that all data on the local device will be **lost**.
+
+---
+
+## 1️⃣ Solution 1: Network Attached Storage (NAS)
+
+An organization can implement **Network Attached Storage (NAS)** devices on its Local Area Network (LAN).
+
+* **Objective**: A NAS allows users to centrally store files on a **dedicated device** over a TCP/IP network.
+* **What It Is**: As the name suggests, a NAS is a small enclosure containing several HDDs (hard drives) that work as a cluster.
+* **Benefit**: It permits users on the network to access this storage unit via the computer network.
+* **Best Use Case**: NAS devices are highly efficient for **small networks** with only a few users. This helps the company save money while still providing a dedicated and centralized storage device.
+
+---
+
+## 2️⃣ Solution 2: Storage Area Network (SAN)
+
+If an organization is performing well and **expanding**, more employees will be hired. This means more users and devices will be added to the network.
+
+### NAS Limitations
+In a large organization, where **hundreds or thousands** of users are continuously transferring files over the network, NAS devices are no longer efficient (they cannot handle such a heavy load).
+
+### The SAN Solution
+For this, dedicated storage servers with a large number of storage drives are necessary. These drives are configured using **RAID (Redundant Array of Independent Disks)** to provide redundancy among the server's storage drives. The benefit of this is that even if one storage drive inside the server fails, no data is lost.
+
+Organizations that have the necessary resources will invest in creating a **Storage Area Network (SAN)**.
+
+* **What is a SAN?**: A SAN provides a **dedicated, high-speed network** that interconnects all the data storage pools of servers and devices.
+* **Purpose of a SAN**: The fundamental concept of a SAN is to ensure two things:
+    1.  **High-speed access** between users and the dedicated storage servers.
+    2.  **Maximum availability** by implementing fault tolerance and redundancy within the SAN's storage devices and applications.
+
+<div align="center">
+  <img src="./images/10.png" width="600"/>
+</div>
+
+## 📊 Diagram Explanation (Figure 7.12)
+
+The diagram below illustrates a typical SAN design.
+
+As shown in the diagram:
+
+* **Storage Devices**: These are the dedicated **disk arrays** (where data is saved). These devices are connected directly to the SAN (represented as a green cloud).
+* **Servers**: The servers are in the middle. They connect to the **SAN** to store and retrieve data, and they connect to the **LAN** (blue cloud) to provide that data to the users.
+* **Users**: Regular users (computers) connect **only to the LAN** and access data *through* the servers.
+
+---
+
+## 🛠️ Technology
+
+### Fiber Channel
+The SAN network typically uses **Fiber Channel** technology. This provides extremely high-speed connections to support high data rates between the file servers and (via the servers) the organization's users.
+
+### SAN Switches
+A SAN has its own dedicated networking devices known as **SAN switches**. These switches interconnect the storage servers and are responsible for moving (forwarding) network data *within* the SAN. (These are separate from and much faster than standard LAN switches).
+
+
+## ⚡ High-Speed Connection Types in Storage Area Networks (SANs)
+
+Because a Storage Area Network (SAN) supports numerous storage devices and servers, it is essential to support the necessary high bandwidth (high-speed connection) between the SAN and the rest of the organization's users.
+
+In a modern networking environment, including Software-Defined Networking (SDN), these are the different components used:
+
+## 🚀 Fiber Channel (FC)
+
+Fiber Channel (FC) is an extremely high-speed network. It is specifically designed for two things: very **low latency** (i.e., very fast response times) and **high throughput** (transferring a large amount of data at once).
+
+Using FC in a SAN has many advantages compared to traditional copper cables:
+
+* **Distance**: Network professionals can run fiber cables far beyond the 100-meter limit of copper.
+* **Speed**: It transfers data at gigabit speeds, unlike copper cables which begin to suffer from **attenuation** (signal loss or weakening) after a certain distance. This is not an issue for fiber.
+* **Implementation**: When FC is implemented in a network, an **FC Host Bus Adapter (HBA)** is installed on every storage server and networking device within the SAN. Each HBA has multiple ports for data exchange.
+
+## 📦 Fiber Channel over Ethernet (FCoE)
+
+Fiber Channel over Ethernet (FCoE) is a method that allows FC frames (data packets) to be **encapsulated** (wrapped inside) an Ethernet message so it can be transported over the network.
+
+* **Objective**: The purpose of using Ethernet is to provide a mutual (common) technology on the network. This technology can simultaneously deliver various types of traffic—such as FC storage traffic and regular Internet Protocol (IP) traffic—together over high-speed fiber optic cables.
+* **Limitation**: Typically, access to network resources via FCoE is limited to a single **LAN (Local Area Network)**.
+
+## 🌐 Internet Small Computer Systems Interface (iSCSI)
+
+Unlike FCoE, iSCSI provides fiber communication over a **routable network** (meaning it can operate between different networks).
+
+* **Simple Explanation**: Put simply, if an organization's users are located on different IP networks (different locations or subnets), then iSCSI is a better solution.
+* **Comparison**: iSCSI is **routable**, whereas FCoE only grants access to users who are on the same network (LAN).
+
+---
